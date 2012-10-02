@@ -66,7 +66,7 @@ module.exports = (robot) ->
     memeGenerator msg, 'bad_time.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.repond /ALIENS (.*)/i, (msg) ->
+  robot.respond /ALIENS (.*)/i, (msg) ->
     memeGenerator msg, 'aliens.jpg', '', msg.match[1], (url) ->
       msg.send url
 ###
