@@ -15,6 +15,9 @@
 
 module.exports = (robot) ->
   robot.hear /https?:\/\/d.pr\/i\/(.*)/i, (msg) ->
-    msg.http(msg.match[0] + "+")
+    msg.http(msg.match[0] + '+')
       .get() (err, res, body) ->
-        msg.send res.headers.location
+        if err? or res.statusCode == 404
+          msg.send 'Couldn\'t find that image'
+        else
+          msg.send res.headers.location
