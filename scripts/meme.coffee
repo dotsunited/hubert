@@ -65,6 +65,10 @@ module.exports = (robot) ->
   robot.hear /(IF YOU .*\s)(.* GONNA HAVE A BAD TIME)/i, (msg) ->
     memeGenerator msg, 'bad_time.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
+
+  robot.repond /ALIENS (.*)/i, (msg) ->
+    memeGenerator msg, 'aliens.jpg', '', msg.match[1], (url) ->
+      msg.send url
 ###
   robot.hear /(.*)TROLLFACE(.*)/i, (msg) ->
     memeGenerator msg, 'troll_face.jpg', msg.match[1], msg.match[2], (url) ->
