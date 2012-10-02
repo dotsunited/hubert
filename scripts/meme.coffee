@@ -13,12 +13,10 @@
 #   Not sure if <text> or <text> - Generates Futurama Fry
 #   Yo dawg <text> so <text> - Generates Yo Dawg
 #   ALL YOUR <text> ARE BELONG TO US - Generates Zero Wing with the caption of <text>
-#   If <text>, <word that can start a question> <text>? - Generates Philosoraptor
 #   <text>, BITCH PLEASE <text> - Generates Yao Ming
 #   <text>, COURAGE <text> - Generates Courage Wolf
 #   ONE DOES NOT SIMPLY <text> - Generates Boromir
 #   IF YOU <text> GONNA HAVE A BAD TIME - Ski Instructor
-#   IF YOU <text> TROLLFACE <text> - Troll Face
 #
 # Author:
 #   bobanj
