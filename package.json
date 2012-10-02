@@ -1,8 +1,7 @@
 {
-  "name":        "hosted-hubot",
+  "name":        "huberd",
   "version":     "2.3.2",
-  "author":      "GitHub Inc.",
-  "keywords":    "github hubot campfire bot",
+  "author":      "GitHub Inc., dotsunited",
   "description": "A simple helpful Robot for your Company",
   "licenses":     [{
     "type":       "MIT",
@@ -16,6 +15,7 @@
 
   "dependencies": {
     "hubot": "2.3.2",
+    "hubot-hipchat": ">= 1.0.2",
     "hubot-scripts": ">= 2.1.0",
     "optparse": "1.0.3"
   },
