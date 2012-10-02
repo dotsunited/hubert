@@ -2,8 +2,8 @@
 #   mlfw shows pictures from mylittlefacewhen.com
 #
 # Commands:
-#   mlfw - Displays a random mlfw image
-#   mlfw tags Display images for a given tag
+#   mlfw      - Displays a random mlfw image
+#   mlfw tags - Display images for a given tag
 
 module.exports = (robot) ->
 
