@@ -40,5 +40,5 @@ imageMe = (msg, query, animated, faces, cb) ->
       images = JSON.parse(body)
       images = images.responseData.results
       if images.length > 0
-        image  = msg.[0] images
+        image  = msg.match[0] images
         cb "#{image.unescapedUrl}#.png"
