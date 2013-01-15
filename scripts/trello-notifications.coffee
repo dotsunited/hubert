@@ -15,7 +15,7 @@
 
 env = process.env
 
-interval = 0 # 30s
+interval = 10000 # 30s
 
 Trello = require 'node-trello'
 
