@@ -7,6 +7,7 @@
 # Configuration:
 #   HUBOT_TRELLO_KEY
 #   HUBOT_TRELLO_TOKEN
+#   HUBOT_TRELLO_ROOM
 #
 # Commands:
 #   None
@@ -21,10 +22,12 @@ Trello = require 'node-trello'
 messages = require '../resources/trello-notifications.strings.coffee'
 
 module.exports = (robot) ->
-  if env.HUBOT_TRELLO_KEY? and env.HUBOT_TRELLO_TOKEN?
+  if env.HUBOT_TRELLO_KEY? and env.HUBOT_TRELLO_TOKEN? and env.HUBOT_TRELLO_ROOM?
     t = new Trello env.HUBOT_TRELLO_KEY, env.HUBOT_TRELLO_TOKEN
+    room = env.HUBOT_TRELLO_ROOM
 
     if t then setInterval ->
+      console.log 'Trello: Polling for notifications'
       t.get '/1/members/me/notifications', (err, data) ->
         if err 
           robot.messageRoom 'Hubot Errors', 'Error receiving trello notifications.'
@@ -33,8 +36,7 @@ module.exports = (robot) ->
 
         for notification in data
           if not notification.unread then break
-          
-          console.log notification
+          console.log 'Trello: New notification, posting...'
           
           message = messages[notification.type]
           
@@ -44,14 +46,12 @@ module.exports = (robot) ->
               @key = property
               break;
 
-            console.log notification.data.old, key
-
             message = message[key]
 
           message = message notification
           url = "http://trello.com/card/#{notification.data.card.id}/1"
 
-          robot.messageRoom.apply robot, ['Allgemein', 'New Trello Notification:'].concat message, url
+          robot.messageRoom.apply robot, [room, 'New Trello Notification:'].concat message, url
     , interval
   else
     console.log 'Trello API keys not set'
