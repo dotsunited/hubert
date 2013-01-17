@@ -37,21 +37,23 @@ module.exports = (robot) ->
         for notification in data
           if not notification.unread then break
           console.log 'Trello: New notification, posting...'
-          
-          message = messages[notification.type]
-          
-          if notification.data.old
-            @key = 'def'
-            for property in Object.keys(notification.data.old)
-              @key = property
-              break;
+          try
+            message = messages[notification.type]
+            
+            if notification.data.old
+              @key = 'def'
+              for property in Object.keys(notification.data.old)
+                @key = property
+                break;
 
-            message = message[key]
+              message = message[key]
 
-          message = message notification
-          url = "http://trello.com/card/#{notification.data.card.id}/1"
+            message = message notification
+            url = "http://trello.com/card/#{notification.data.card.id}/1"
 
-          robot.messageRoom.apply robot, [room, 'New Trello Notification:'].concat message, url
+            robot.messageRoom.apply robot, [room, 'New Trello Notification:'].concat message, url
+          catch error
+            console.log 'Error... ', error
     , interval
   else
     console.log 'Trello API keys not set'
