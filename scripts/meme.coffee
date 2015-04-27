@@ -22,51 +22,51 @@
 #   bobanj
 
 module.exports = (robot) ->
-  robot.hear /(.*)\s?Y U NO (.+)/i, (msg) ->
+  robot.hear /(.*)\s?Y U NO (.+)/, (msg) ->
     memeGenerator msg, 'y_u_no.jpg', msg.match[1], 'Y U NO ' + msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /(.*) (ALL the .*)/i, (msg) ->
+  robot.hear /(.*) (ALL THE .*)/, (msg) ->
     memeGenerator msg, 'all_the_things.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /(I DON'?T ALWAYS .*) (BUT WHEN I DO,? .*)/i, (msg) ->
+  robot.hear /(I DON'?T ALWAYS .*) (BUT WHEN I DO,? .*)/, (msg) ->
     memeGenerator msg, 'most_interesting.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /(.*)(SUCCESS|NAILED IT.*)/i, (msg) ->
+  robot.hear /(.*)(SUCCESS|NAILED IT.*)/, (msg) ->
     memeGenerator msg, 'success_kid.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /(.*) (\w+\sTOO DAMN .*)/i, (msg) ->
+  robot.hear /(.*) (\w+\sTOO DAMN .*)/, (msg) ->
     memeGenerator msg, 'too_damn_high.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /(NOT SURE IF .*) (OR .*)/i, (msg) ->
+  robot.hear /(NOT SURE IF .*) (OR .*)/, (msg) ->
     memeGenerator msg, 'fry.png', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /(YO DAWG .*) (SO .*)/i, (msg) ->
+  robot.hear /(YO DAWG .*) (SO .*)/, (msg) ->
     memeGenerator msg, 'xzibit.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /(.*)\s*BITCH PLEASE\s*(.*)/i, (msg) ->
+  robot.hear /(.*)\s*BITCH PLEASE\s*(.*)/, (msg) ->
     memeGenerator msg, 'yao_ming.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /(.*)\s*COURAGE\s*(.*)/i, (msg) ->
+  robot.hear /(.*)\s*COURAGE\s*(.*)/, (msg) ->
     memeGenerator msg, 'courage_wolf.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /ONE DOES NOT SIMPLY (.*)/i, (msg) ->
+  robot.hear /ONE DOES NOT SIMPLY (.*)/, (msg) ->
     memeGenerator msg, 'boromir.jpg', 'ONE DOES NOT SIMPLY', msg.match[1], (url) ->
       msg.send url
 
-  robot.hear /(IF YOU .*\s)(.* GONNA HAVE A BAD TIME)/i, (msg) ->
+  robot.hear /(IF YOU .*\s)(.* GONNA HAVE A BAD TIME)/, (msg) ->
     memeGenerator msg, 'bad_time.jpg', msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.respond /ALIENS (.*)/i, (msg) ->
+  robot.respond /ALIENS (.*)/, (msg) ->
     memeGenerator msg, 'aliens.jpg', '', msg.match[1], (url) ->
       msg.send url
 ###
