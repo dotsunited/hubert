@@ -23,11 +23,15 @@
     "hubot": ">= 2.6.0 < 3.0.0",
     "hubot-scripts": ">= 2.5.0 < 3.0.0",
     "hubot-hipchat": "~2.7.5",
+    "hubot-google-translate": "~0.1.0",
+    "hubot-explainshell": "~1.1.0",
+    "hubot-devops-reactions": "~1.0.2",
+    "hubot-motivate": "~3.0.0",
     "htmlparser": "1.7.6",
     "soupselect": "0.2.0"
   },
   "engines": {
     "node": "0.10.x",
-    "npm":  "1.2.x"
+    "npm": "1.2.x"
   }
 }
