@@ -17,7 +17,7 @@
 module.exports = (robot) ->
   robot.respond /phpdoc for (.+)$/i, (msg) ->
     msg
-    .http("http://www.php.net/manual/en/function." + msg.match[1].replace(/[_-]+/, "-") + ".php")
+    .http("http://php.net/" + msg.match[1].replace(/[_-]+/, "-"))
     .get() (err, res, body) ->
 
       $ = require("cheerio").load(body)
