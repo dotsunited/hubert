@@ -9,6 +9,7 @@
 #
 # Commands:
 #   devops reactions
+#   devops me
 #
 # Author:
 #
@@ -18,7 +19,7 @@ jquery = 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'
 url = 'http://devopsreactions.tumblr.com/random'
 
 module.exports = (robot) ->
-  robot.hear /devops reactions/i, (msg) ->
+  robot.hear /devops (reactions|me)/i, (msg) ->
     msg.http(url).get() (err, res, body) ->
       location = res.headers.location
       jsdom.env location, [jquery], (errors, window) ->
