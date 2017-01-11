@@ -27,6 +27,7 @@
     "hubot-explainshell": "^1.1.0",
     "hubot-hipchat": "2.12.0-6",
     "hubot-scripts": "^2.17.2",
+    "hubot-seen": "^0.2.3",
     "hubot-thesimpsons": "^1.1.5",
     "hubot-victory": "^1.5.3",
     "jsdom": ">=3.0.0 < 4.0.0",
