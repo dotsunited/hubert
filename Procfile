@@ -1,1 +1,1 @@
-web: bin/hubot -a hipchat -n hubert
+web: bin/hubot -a slack
