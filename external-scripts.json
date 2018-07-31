@@ -7,5 +7,7 @@
   "hubot-maps",
   "hubot-redis-brain",
   "hubot-rules",
+  "hubot-seen",
   "hubot-shipit",
+  "hubot-victory"
 ]
